@@ -1,12 +1,21 @@
-import { editor } from 'monaco-editor'
+import { EditorView, basicSetup } from 'codemirror'
+import { EditorState } from '@codemirror/state'
+import { json } from '@codemirror/lang-json'
+import { oneDarkTheme } from '@codemirror/theme-one-dark'
 
-export function createEditor(code: string, language = 'json') {
-  const rootElement = document.getElementById('JSON-UI-Editor')!
-  const value = JSON.stringify(JSON.parse(code), null, 2)
-  editor.create(rootElement, {
-    value,
-    language,
-    // automaticLayout: true, // 自动布局
-    theme: 'vs-dark',
+function startState(code: string) {
+  const doc = JSON.stringify(JSON.parse(code), null, 2)
+  return EditorState.create({
+    doc,
+    extensions: [basicSetup, oneDarkTheme, json()],
+  })
+}
+
+export function createEditor(code: string) {
+  const parent = document.getElementById('JSON-UI-Editor')!
+  const state = startState(code)
+  const view = new EditorView({
+    state,
+    parent,
   })
 }

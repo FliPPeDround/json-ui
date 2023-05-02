@@ -47,7 +47,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "monaco-editor": "^0.37.1"
+    "@codemirror/lang-json": "^6.0.1",
+    "@codemirror/state": "^6.2.0",
+    "@codemirror/theme-one-dark": "^6.1.2",
+    "@codemirror/view": "^6.10.1",
+    "codemirror": "^6.0.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.4",

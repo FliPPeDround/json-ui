@@ -8,12 +8,12 @@ export default defineConfig((options) => {
       content: 'src/contentScripts/index.ts',
       background: 'src/background/index.ts',
     },
-    format: ['cjs'],
+    format: ['iife'],
     outDir: 'extension',
     shims: false,
     dts: false,
     clean: true,
-    minify: !options.watch ? 'terser' : false,
+    minify: options.watch ? false : 'terser',
     async onSuccess() {
       await writeManifest()
       await copyAssets()
@@ -23,6 +23,9 @@ export default defineConfig((options) => {
         js: '.js',
       }
     },
-    noExternal: ['monaco-editor'],
+    noExternal: [
+      'codemirror',
+      '@codemirror',
+    ],
   }
 })

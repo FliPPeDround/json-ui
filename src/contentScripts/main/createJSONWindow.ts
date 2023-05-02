@@ -8,12 +8,11 @@ export function createJSONWindow(
   },
 ) {
   const JSONUIWindow = document.getElementById('JSON-UI-Window')!
-  const { width, height } = JSONUIWindow.getBoundingClientRect()
   const jsonCrackEmbed = document.createElement('iframe')
   jsonCrackEmbed.id = 'jsoncrackEmbed'
   jsonCrackEmbed.src = 'https://jsoncrack.com/widget'
-  jsonCrackEmbed.width = `${width}px`
-  jsonCrackEmbed.height = `${height}px`
+  jsonCrackEmbed.width = '100%'
+  jsonCrackEmbed.height = '100%'
   jsonCrackEmbed.style.border = 'none'
   // 将iframe添加到页面中
   JSONUIWindow.appendChild(jsonCrackEmbed)
