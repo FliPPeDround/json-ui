@@ -51,6 +51,7 @@
     "@antfu/ni": "^0.21.2",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.15.11",
+    "@types/prettier": "^2.7.2",
     "@types/webextension-polyfill": "^0.10.0",
     "bumpp": "^9.1.0",
     "eslint": "^8.37.0",
@@ -70,5 +71,10 @@
   },
   "lint-staged": {
     "*": "eslint --fix"
+  },
+  "dependencies": {
+    "codemirror": "^6.0.1",
+    "monaco-editor": "^0.37.1",
+    "prettier": "^2.8.8"
   }
 }

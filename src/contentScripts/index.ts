@@ -1,5 +1,8 @@
-import { createJSONWindow, getTextFromTextOnlyDocument } from './main'
+import { createEditor, createJSONWindow, getTextFromTextOnlyDocument, initElement } from './main'
 
 const JSONData = getTextFromTextOnlyDocument()
-if (JSONData)
+if (JSONData) {
+  initElement()
+  createEditor(JSONData)
   createJSONWindow(JSONData)
+}
