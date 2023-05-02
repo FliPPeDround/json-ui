@@ -1,8 +1,9 @@
-import { createEditor, createJSONWindow, getTextFromTextOnlyDocument, initElement } from './main'
+import { createEditor, createJSONWindow, getTextFromTextOnlyDocument, initElement, reloadJSON } from './main'
 
 const JSONData = getTextFromTextOnlyDocument()
 if (JSONData) {
   initElement()
-  createEditor(JSONData)
-  createJSONWindow(JSONData)
+  const editorView = createEditor(JSONData)
+  const jsonCrackEmbed = createJSONWindow(JSONData)
+  reloadJSON(editorView, jsonCrackEmbed)
 }

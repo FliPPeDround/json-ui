@@ -4,10 +4,13 @@ import { json } from '@codemirror/lang-json'
 import { oneDarkTheme } from '@codemirror/theme-one-dark'
 
 function startState(code: string) {
-  const doc = JSON.stringify(JSON.parse(code), null, 2)
   return EditorState.create({
-    doc,
-    extensions: [basicSetup, oneDarkTheme, json()],
+    doc: code,
+    extensions: [
+      basicSetup,
+      oneDarkTheme,
+      json(),
+    ],
   })
 }
 
@@ -18,4 +21,5 @@ export function createEditor(code: string) {
     state,
     parent,
   })
+  return view
 }

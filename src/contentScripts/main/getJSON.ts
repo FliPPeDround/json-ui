@@ -10,6 +10,7 @@ export function getTextFromTextOnlyDocument() {
 
   if (bodyHasOnlyOneElement && (isPre || isPlainText)) {
     document.body.removeChild(firstChild)
-    return firstChild.innerText || firstChild.nodeValue
+    const json = firstChild.innerText || firstChild.nodeValue
+    return JSON.stringify(JSON.parse(json!), null, 2)
   }
 }

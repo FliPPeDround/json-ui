@@ -5,7 +5,8 @@ export function initElement() {
   <div id="JSON-UI-Window"></div>
 </div>
 <div id="header">
-  JSON UI
+  <p>JSON UI</p>
+  <button id="reload-btn">Run</button>
 </div>
 <div id="footer">
   powered by jsoncrack
@@ -53,6 +54,9 @@ export function initElement() {
   display: flex;
   align-items: center;
   padding-left: 1rem;
+}
+#reload-btn {
+  margin-left: calc(30vw - 120px);
 }
 `
   document.head.insertAdjacentHTML('beforeend', `<style>${initCSS}</style>`)
