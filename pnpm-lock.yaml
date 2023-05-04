@@ -53,6 +53,9 @@ importers:
       pnpm:
         specifier: ^8.1.1
         version: 8.4.0
+      postcss:
+        specifier: ^8.4.23
+        version: 8.4.23
       simple-git-hooks:
         specifier: ^2.8.1
         version: 2.8.1
@@ -61,7 +64,7 @@ importers:
         version: 5.17.1
       tsup:
         specifier: ^6.7.0
-        version: 6.7.0(typescript@5.0.4)
+        version: 6.7.0(postcss@8.4.23)(typescript@5.0.4)
       typescript:
         specifier: ^5.0.3
         version: 5.0.4
@@ -2732,6 +2735,12 @@ packages:
       thenify-all: 1.6.0
     dev: true
 
+  /nanoid@3.3.6:
+    resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+    dev: true
+
   /natural-compare-lite@1.4.0:
     resolution: {integrity: sha1-F7CVgZiJef3a/gIB6TG6kzyWy7Q=}
     dev: true
@@ -2952,6 +2961,10 @@ packages:
     resolution: {integrity: sha512-NOT9AcKiDGpnV/HBhI22Str++XWcErO/bALvHCuhv33owZW/CjH8KAFLZDCmu3727sihe0wTxpDhyGc6M8qacQ==}
     dev: true
 
+  /picocolors@1.0.0:
+    resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
+    dev: true
+
   /picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
@@ -2987,7 +3000,7 @@ packages:
     hasBin: true
     dev: true
 
-  /postcss-load-config@3.1.4:
+  /postcss-load-config@3.1.4(postcss@8.4.23):
     resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==}
     engines: {node: '>= 10'}
     peerDependencies:
@@ -3000,6 +3013,7 @@ packages:
         optional: true
     dependencies:
       lilconfig: 2.1.0
+      postcss: 8.4.23
       yaml: 1.10.2
     dev: true
 
@@ -3009,6 +3023,15 @@ packages:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
+    dev: true
+
+  /postcss@8.4.23:
+    resolution: {integrity: sha512-bQ3qMcpF6A/YjR55xtoTr0jGOlnPOKAIMdOWiv0EIT6HVPEaJiJB4NLljSbiHoC2RX7DN5Uvjtpbg1NPdwv1oA==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.6
+      picocolors: 1.0.0
+      source-map-js: 1.0.2
     dev: true
 
   /prelude-ls@1.2.1:
@@ -3251,6 +3274,11 @@ packages:
     dependencies:
       ansi-styles: 6.2.1
       is-fullwidth-code-point: 4.0.0
+    dev: true
+
+  /source-map-js@1.0.2:
+    resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
+    engines: {node: '>=0.10.0'}
     dev: true
 
   /source-map-support@0.5.21:
@@ -3503,7 +3531,7 @@ packages:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
     dev: true
 
-  /tsup@6.7.0(typescript@5.0.4):
+  /tsup@6.7.0(postcss@8.4.23)(typescript@5.0.4):
     resolution: {integrity: sha512-L3o8hGkaHnu5TdJns+mCqFsDBo83bJ44rlK7e6VdanIvpea4ArPcU3swWGsLVbXak1PqQx/V+SSmFPujBK+zEQ==}
     engines: {node: '>=14.18'}
     hasBin: true
@@ -3527,7 +3555,8 @@ packages:
       execa: 5.1.1
       globby: 11.1.0
       joycon: 3.1.1
-      postcss-load-config: 3.1.4
+      postcss: 8.4.23
+      postcss-load-config: 3.1.4(postcss@8.4.23)
       resolve-from: 5.0.0
       rollup: 3.21.4
       source-map: 0.8.0-beta.0

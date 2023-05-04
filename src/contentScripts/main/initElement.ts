@@ -1,9 +1,9 @@
-import { i_JSON, i_github } from '../icons/index'
+import { i_JSON } from '../icons/index'
 
 export function initElement() {
   const initElement = `
 <div id="JSON-UI">
-  <div id="header">
+  <div id="JSON-UI-HEADER">
     <a
       href="https://github.com/FliPPeDround/json-ui"
       target="_blank"
@@ -14,8 +14,13 @@ export function initElement() {
   </div>
   <div id="JSON-UI-Editor"></div>
   <div id="JSON-UI-Window"></div>
-  <div id="footer">
-    <a>${i_github}powered by jsoncrack</a>
+  <div id="JSON-UI-FOOTER">
+    <span>powered by ${' .'}
+      <a href="https://jsoncrack.com/" target="_blank">
+        <span style="color: #F87C03"> JSON</span>
+        CRACK
+      </a>
+    </span>
   </div>
 </div>
 `
@@ -44,7 +49,7 @@ export function initElement() {
   width: 70vw;
   height: 100vh;
 }
-#footer {
+#JSON-UI-FOOTER {
   background: #2F3136;
   height: 32px;
   width: 100vw;
@@ -53,8 +58,14 @@ export function initElement() {
   z-index: 999999;
   display: flex;
   align-items: center;
+  flex-direction: row-reverse;
 }
-#header {
+
+#JSON-UI-FOOTER span {
+  display: flex;
+  align-items: center;
+}
+#JSON-UI-HEADER {
   background: rgb(47, 49, 54);
   height: 36px;
   width: 100vw;
@@ -70,7 +81,7 @@ export function initElement() {
   margin-left: calc(30vw - 120px);
 }
 
-a {
+#JSON-UI a{
   display: flex;
   align-items: center;
   color: #fff;

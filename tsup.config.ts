@@ -7,6 +7,7 @@ export default defineConfig((options) => {
     entry: {
       content: 'src/contentScripts/index.ts',
       // background: 'src/background/index.ts',
+      // cs: 'src/styles/index.css',
     },
     format: ['iife'],
     outDir: 'extension',

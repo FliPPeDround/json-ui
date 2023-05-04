@@ -65,6 +65,7 @@
     "kolorist": "^1.8.0",
     "lint-staged": "^13.2.0",
     "pnpm": "^8.1.1",
+    "postcss": "^8.4.23",
     "simple-git-hooks": "^2.8.1",
     "terser": "^5.17.1",
     "tsup": "^6.7.0",
