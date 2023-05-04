@@ -27,9 +27,10 @@ export function initElement() {
 }
 #JSON-UI-Editor {
   width: 30vw;
-  height: 100vh;
+  height: calc(100vh - 70px);
   top: 36px;
   position: relative;
+  overflow: auto;
 }
 #JSON-UI-Window {
   width: 70vw;
