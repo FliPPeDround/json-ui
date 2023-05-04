@@ -23,8 +23,7 @@ export function initElement() {
     </span>
   </div>
 </div>
-`
-  const initCSS = `
+<style>
 *{
   margin: 0;
   padding: 0;
@@ -88,7 +87,20 @@ export function initElement() {
   text-decoration: none;
   font-size: 1.2rem;
 }
-`
-  document.head.insertAdjacentHTML('beforeend', `<style>${initCSS}</style>`)
+
+.cm-panel {
+  position: fixed !important;
+  top: calc(36px + .8rem);
+  left: calc(30vw + .8rem);
+  z-index: 100;
+  background: #282C34;
+  padding: .8rem !important;
+  border-radius: 6px;
+}
+.cm-panels.cm-panels-bottom {
+  border: none !important;
+}
+
+</style>`
   document.body.insertAdjacentHTML('beforeend', initElement)
 }

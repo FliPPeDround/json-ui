@@ -1,5 +1,4 @@
 import { createEditor, createJSONView, getTextFromTextOnlyDocument, initElement, reloadJSON } from './main'
-import './styles/index.css'
 
 const JSONData = getTextFromTextOnlyDocument()
 if (JSONData) {
