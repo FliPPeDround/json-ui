@@ -1,15 +1,15 @@
 export function initElement() {
   const initElement = `
 <div id="JSON-UI">
+  <div id="header">
+    <p>JSON UI</p>
+    <button id="reload-btn">Run</button>
+  </div>
   <div id="JSON-UI-Editor"></div>
   <div id="JSON-UI-Window"></div>
-</div>
-<div id="header">
-  <p>JSON UI</p>
-  <button id="reload-btn">Run</button>
-</div>
-<div id="footer">
-  powered by jsoncrack
+  <div id="footer">
+    powered by jsoncrack
+  </div>
 </div>
 `
   const initCSS = `

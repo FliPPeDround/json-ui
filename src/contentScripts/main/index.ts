@@ -1,5 +1,5 @@
 export * from './getJSON'
-export * from './createJSONWindow'
+export * from './createJSONView'
 export * from './createEditor'
 export * from './initElement'
 export * from './reloadJSON'

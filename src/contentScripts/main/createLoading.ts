@@ -4,10 +4,16 @@ function loadingjsonCrackEmbed() {
   loading.style.width = '100%'
   loading.style.height = '100%'
   loading.style.display = 'flex'
+  loading.style.flexDirection = 'column'
   loading.style.justifyContent = 'center'
   loading.style.alignItems = 'center'
+  loading.style.background = '#1C1C1C'
+  loading.style.backgroundImage = 'linear-gradient(#2A2A2A 1.5px,transparent 1.5px), linear-gradient(90deg,#2A2A2A 1.5px,transparent 1.5px), linear-gradient(#252525 1px,transparent 1px), linear-gradient(90deg,#252525 1px,transparent 1px)'
+  loading.style.backgroundSize = '100px 100px, 100px 100px, 20px 20px, 20px 20px'
+  loading.style.backgroundPosition = '-1.5px -1.5px, -1.5px -1.5px, -1px -1px, -1px -1px'
   loading.innerHTML = `
   <div class="lds-ripple"><div></div><div></div></div>
+  <div>Loading...</div>
   <style>
   .lds-ripple {
     display: inline-block;
@@ -55,37 +61,7 @@ function removeLoading() {
   document.getElementById('reload-btn')!.style.display = 'inline-block'
 }
 
-export function createJSONWindow(
-  json: string,
-  options: JSONCrackOptions = {
-    theme: 'dark',
-    direction: 'RIGHT',
-  },
-) {
-  loadingjsonCrackEmbed()
-
-  const JSONUIWindow = document.getElementById('JSON-UI-Window')!
-  const jsonCrackEmbed = document.createElement('iframe')
-  jsonCrackEmbed.id = 'jsoncrackEmbed'
-  jsonCrackEmbed.src = 'https://jsoncrack.com/widget'
-  jsonCrackEmbed.width = '100%'
-  jsonCrackEmbed.height = '100%'
-  jsonCrackEmbed.style.border = 'none'
-  jsonCrackEmbed.style.display = 'none'
-  JSONUIWindow.appendChild(jsonCrackEmbed)
-  jsonCrackEmbed.onload = () => {
-    jsonCrackEmbed.style.display = 'block'
-    removeLoading()
-    jsonCrackEmbed.contentWindow!.postMessage({
-      json,
-      options,
-    }, '*')
-  }
-
-  return jsonCrackEmbed
-}
-
-interface JSONCrackOptions {
-  theme: 'light' | 'dark'
-  direction: 'UP' | 'DOWN' | 'LEFT' | 'RIGHT'
+export {
+  loadingjsonCrackEmbed,
+  removeLoading,
 }
