@@ -18,9 +18,16 @@ export async function getManifest() {
         128: './assets/icon-512.png',
       },
     },
-    background: {
-      service_worker: 'background.js',
-    },
+    // background: {
+    //   service_worker: 'background.js',
+    // },
+    content_scripts: [
+      {
+        matches: ['<all_urls>'],
+        js: ['content.js'],
+        run_at: 'document_end',
+      },
+    ],
     icons: {
       16: './assets/icon-512.png',
       48: './assets/icon-512.png',

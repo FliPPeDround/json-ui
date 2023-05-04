@@ -37,7 +37,7 @@ export function initElement() {
 }
 #footer {
   background: #2F3136;
-  height: 28px;
+  height: 32px;
   width: 100vw;
   position: fixed;
   bottom: 0;
@@ -46,7 +46,7 @@ export function initElement() {
 #header {
   background: rgb(47, 49, 54);
   height: 36px;
-  width: 60vw;
+  width: 100vw;
   position: fixed;
   top: 0;
   left: 0;

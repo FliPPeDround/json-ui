@@ -1,36 +1,81 @@
-import { getBrowserThem } from '../utils'
+function loadingjsonCrackEmbed() {
+  const loading = document.createElement('div')
+  loading.id = 'loading'
+  loading.style.width = '100%'
+  loading.style.height = '100%'
+  loading.style.display = 'flex'
+  loading.style.justifyContent = 'center'
+  loading.style.alignItems = 'center'
+  loading.innerHTML = `
+  <div class="lds-ripple"><div></div><div></div></div>
+  <style>
+  .lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ripple div {
+    position: absolute;
+    border: 4px solid #fff;
+    opacity: 1;
+    border-radius: 50%;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) -0.5s infinite;
+  }
+  .lds-ripple div:nth-child(1) {
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) 0s infinite;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+    }
+  }
+  </style>
+  `
+  document.getElementById('JSON-UI-Window')!.appendChild(loading)
+  document.getElementById('reload-btn')!.style.display = 'none'
+}
+
+function removeLoading() {
+  document.getElementById('loading')!.remove()
+  document.getElementById('header')!.style.width = '50vw'
+  document.getElementById('reload-btn')!.style.display = 'inline-block'
+}
 
 export function createJSONWindow(
   json: string,
   options: JSONCrackOptions = {
-    theme: getBrowserThem(),
+    theme: 'dark',
     direction: 'RIGHT',
   },
 ) {
+  loadingjsonCrackEmbed()
+
   const JSONUIWindow = document.getElementById('JSON-UI-Window')!
-
-  // const loading = document.createElement('div')
-  // loading.style.position = 'absolute'
-  // loading.style.top = '50%'
-  // loading.style.left = '50%'
-  // loading.style.transform = 'translate(-50%, -50%)'
-  // loading.style.fontSize = '30px'
-  // loading.innerText = 'Loading...'
-  // document.getElementById('JSON-UI')!.appendChild(loading)
-
   const jsonCrackEmbed = document.createElement('iframe')
   jsonCrackEmbed.id = 'jsoncrackEmbed'
   jsonCrackEmbed.src = 'https://jsoncrack.com/widget'
   jsonCrackEmbed.width = '100%'
   jsonCrackEmbed.height = '100%'
   jsonCrackEmbed.style.border = 'none'
-  // 将iframe添加到页面中
+  jsonCrackEmbed.style.display = 'none'
   JSONUIWindow.appendChild(jsonCrackEmbed)
-
-  // 加载loading效果
-
   jsonCrackEmbed.onload = () => {
-    // loading.style.display = 'none'
+    jsonCrackEmbed.style.display = 'block'
+    removeLoading()
     jsonCrackEmbed.contentWindow!.postMessage({
       json,
       options,

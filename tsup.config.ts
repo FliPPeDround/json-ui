@@ -6,14 +6,14 @@ export default defineConfig((options) => {
   return {
     entry: {
       content: 'src/contentScripts/index.ts',
-      background: 'src/background/index.ts',
+      // background: 'src/background/index.ts',
     },
     format: ['iife'],
     outDir: 'extension',
     shims: false,
     dts: false,
     clean: true,
-    minify: options.watch ? false : 'terser',
+    minify: !options.watch,
     async onSuccess() {
       await writeManifest()
       await copyAssets()
