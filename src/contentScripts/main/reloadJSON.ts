@@ -11,6 +11,7 @@ function sendJSONDate(
     for (const diagnostic of diagnostics) {
       // TODO: show error message in the editor
     }
+    alert('JSON format error')
     return
   }
 
