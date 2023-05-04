@@ -58,6 +58,7 @@ export function initElement() {
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
+  padding-right: 1rem;
 }
 
 #JSON-UI-FOOTER span {
