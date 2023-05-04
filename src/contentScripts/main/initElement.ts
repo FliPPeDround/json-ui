@@ -1,14 +1,21 @@
+import { i_JSON, i_github } from '../icons/index'
+
 export function initElement() {
   const initElement = `
 <div id="JSON-UI">
   <div id="header">
-    <p>JSON UI</p>
+    <a
+      href="https://github.com/FliPPeDround/json-ui"
+      target="_blank"
+    >
+      ${i_JSON} <p>JSON UI </p>
+    </a>
     <button id="reload-btn">Run</button>
   </div>
   <div id="JSON-UI-Editor"></div>
   <div id="JSON-UI-Window"></div>
   <div id="footer">
-    powered by jsoncrack
+    <a>${i_github}powered by jsoncrack</a>
   </div>
 </div>
 `
@@ -17,6 +24,7 @@ export function initElement() {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 #JSON-UI {
   display: flex;
@@ -43,6 +51,8 @@ export function initElement() {
   position: fixed;
   bottom: 0;
   z-index: 999999;
+  display: flex;
+  align-items: center;
 }
 #header {
   background: rgb(47, 49, 54);
@@ -58,6 +68,14 @@ export function initElement() {
 }
 #reload-btn {
   margin-left: calc(30vw - 120px);
+}
+
+a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 `
   document.head.insertAdjacentHTML('beforeend', `<style>${initCSS}</style>`)
