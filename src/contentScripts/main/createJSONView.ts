@@ -1,9 +1,10 @@
+import { getBrowserThem } from '../utils'
 import { loadingjsonCrackEmbed, removeLoading } from './createLoading'
 
 export function createJSONView(
   json: string,
   options: JSONCrackOptions = {
-    theme: 'dark',
+    theme: getBrowserThem(),
     direction: 'RIGHT',
   },
 ) {
@@ -20,8 +21,6 @@ export function createJSONView(
   JSONUIWindow.appendChild(jsonCrackEmbed)
   jsonCrackEmbed.onload = () => {
     jsonCrackEmbed.style.display = 'block'
-    const aTag = document.createElement('a')
-    console.log(aTag)
     removeLoading()
     jsonCrackEmbed.contentWindow!.postMessage({
       json,

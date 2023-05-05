@@ -1,5 +1,5 @@
 import {
-  changeTheme,
+  // changeTheme,
   createEditor,
   createJSONView,
   getTextFromTextOnlyDocument,
@@ -13,5 +13,5 @@ if (JSONData) {
   const editorView = createEditor(JSONData)
   const jsonCrackEmbed = createJSONView(JSONData)
   reloadJSON(editorView, jsonCrackEmbed)
-  changeTheme()
+  // changeTheme(editorView, jsonCrackEmbed)
 }

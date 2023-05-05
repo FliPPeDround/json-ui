@@ -1,7 +1,7 @@
 import { EditorView, basicSetup } from 'codemirror'
 import { EditorState } from '@codemirror/state'
 import { json } from '@codemirror/lang-json'
-import { oneDarkTheme } from '@codemirror/theme-one-dark'
+import { oneDark, oneDarkTheme } from '@codemirror/theme-one-dark'
 import 'simplebar/dist/simplebar.min.css'
 import SimpleBar from 'simplebar'
 
@@ -11,6 +11,7 @@ function startState(code: string) {
     extensions: [
       basicSetup,
       oneDarkTheme,
+      oneDark,
       json(),
     ],
   })

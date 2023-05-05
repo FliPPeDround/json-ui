@@ -1,4 +1,4 @@
-import { i_JSON, i_dark, i_light } from '../icons/index'
+import { i_JSON, i_github, i_save } from '../icons/index'
 import { getBrowserThem } from './../utils/index'
 
 export function initElement() {
@@ -11,17 +11,22 @@ export function initElement() {
     >
       ${i_JSON} <p>JSON UI </p>
     </a>
-    <button id="reload-btn">Run</button>
+    <div id="reload-btn">${i_save}</div>
   </div>
   <div id="JSON-UI-Editor"></div>
   <div id="JSON-UI-Window"></div>
   <div id="JSON-UI-FOOTER">
    <div>
-    <div id="theme-btn">
-      ${getBrowserThem() === 'dark' ? i_light : i_dark}
-    </div>
+    <a
+      id="theme-btn"
+      href="https://github.com/FliPPeDround/json-ui"
+      target="_blank"
+    >
+      ${i_github}
+    </a>
    </div>
-    <span>powered by ${' .'}
+    <span>
+      <span style="color: #b9bbbe; font-size: 0.8rem">Powered by&ensp;</span>
       <a href="https://jsoncrack.com/" target="_blank">
         <span style="color: #F87C03"> JSON</span>
         CRACK
@@ -48,7 +53,7 @@ export function initElement() {
 }
 #JSON-UI-Editor {
   width: 30vw;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 68px);
   background: #282c34;
   top: 36px;
   position: relative;
@@ -85,10 +90,23 @@ export function initElement() {
   z-index: 999999;
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 0 1rem;
 }
-#reload-btn {
-  margin-left: calc(30vw - 120px);
+#reload-btn{
+  position: absolute;
+  left: calc(30vw - 36px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#reload-btn svg{
+  cursor: pointer;
+  transition: color .5s;
+  color: ${getBrowserThem() === 'dark' ? '#8b8d8f' : '#878d97'};
+}
+#reload-btn svg:hover{
+  color: ${getBrowserThem() === 'dark' ? '#e5e7eb' : '#374151'};
 }
 
 #JSON-UI a{
@@ -97,6 +115,7 @@ export function initElement() {
   color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
+  
 }
 
 .cm-panel {
@@ -113,7 +132,7 @@ export function initElement() {
 }
 
 .cm-scroller {
-  overflow-y: hidden !important;
+  overflow: hidden !important;
 }
 
 #theme-btn svg{

@@ -58,7 +58,7 @@ function loadingjsonCrackEmbed() {
 function removeLoading() {
   document.getElementById('loading')!.remove()
   document.getElementById('JSON-UI-HEADER')!.style.width = '50vw'
-  document.getElementById('reload-btn')!.style.display = 'inline-block'
+  document.getElementById('reload-btn')!.style.display = 'flex'
 }
 
 export {
