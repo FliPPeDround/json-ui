@@ -102,6 +102,9 @@ export function initElement() {
   border: none !important;
 }
 
+.cm-scroller {
+  overflow-y: hidden !important;
+}
 </style>`
   document.body.insertAdjacentHTML('beforeend', initElement)
 }

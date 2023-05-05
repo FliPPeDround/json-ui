@@ -27,6 +27,7 @@ export default defineConfig((options) => {
     noExternal: [
       'codemirror',
       '@codemirror',
+      'simplebar',
     ],
   }
 })

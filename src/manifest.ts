@@ -25,7 +25,7 @@ export async function getManifest() {
       {
         matches: ['<all_urls>'],
         js: ['content.js'],
-        // css: ['content.css'],
+        css: ['content.css'],
         run_at: 'document_end',
       },
     ],

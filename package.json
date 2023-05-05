@@ -51,7 +51,8 @@
     "@codemirror/state": "^6.2.0",
     "@codemirror/theme-one-dark": "^6.1.2",
     "@codemirror/view": "^6.10.1",
-    "codemirror": "^6.0.1"
+    "codemirror": "^6.0.1",
+    "simplebar": "^6.2.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.4",
