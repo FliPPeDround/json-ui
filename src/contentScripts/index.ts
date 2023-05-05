@@ -1,4 +1,11 @@
-import { createEditor, createJSONView, getTextFromTextOnlyDocument, initElement, reloadJSON } from './main'
+import {
+  changeTheme,
+  createEditor,
+  createJSONView,
+  getTextFromTextOnlyDocument,
+  initElement,
+  reloadJSON,
+} from './main'
 
 const JSONData = getTextFromTextOnlyDocument()
 if (JSONData) {
@@ -6,4 +13,5 @@ if (JSONData) {
   const editorView = createEditor(JSONData)
   const jsonCrackEmbed = createJSONView(JSONData)
   reloadJSON(editorView, jsonCrackEmbed)
+  changeTheme()
 }

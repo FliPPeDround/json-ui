@@ -1,4 +1,5 @@
-import { i_JSON } from '../icons/index'
+import { i_JSON, i_dark, i_light } from '../icons/index'
+import { getBrowserThem } from './../utils/index'
 
 export function initElement() {
   const initElement = `
@@ -15,6 +16,11 @@ export function initElement() {
   <div id="JSON-UI-Editor"></div>
   <div id="JSON-UI-Window"></div>
   <div id="JSON-UI-FOOTER">
+   <div>
+    <div id="theme-btn">
+      ${getBrowserThem() === 'dark' ? i_light : i_dark}
+    </div>
+   </div>
     <span>powered by ${' .'}
       <a href="https://jsoncrack.com/" target="_blank">
         <span style="color: #F87C03"> JSON</span>
@@ -24,6 +30,9 @@ export function initElement() {
   </div>
 </div>
 <style>
+:root {
+  --JSON-bg-color: ${getBrowserThem() === 'dark' ? '#2F3136' : '#f2f3f5'};
+}
 *{
   margin: 0;
   padding: 0;
@@ -35,11 +44,12 @@ export function initElement() {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: #282C34
+  background: var(--JSON-bg-color);
 }
 #JSON-UI-Editor {
   width: 30vw;
   height: calc(100vh - 70px);
+  background: #282c34;
   top: 36px;
   position: relative;
   overflow: auto;
@@ -49,7 +59,7 @@ export function initElement() {
   height: 100vh;
 }
 #JSON-UI-FOOTER {
-  background: #2F3136;
+  background: var(--JSON-bg-color);
   height: 32px;
   width: 100vw;
   position: fixed;
@@ -57,8 +67,8 @@ export function initElement() {
   z-index: 999999;
   display: flex;
   align-items: center;
-  flex-direction: row-reverse;
-  padding-right: 1rem;
+  justify-content: space-between;
+  padding: 0 1rem;
 }
 
 #JSON-UI-FOOTER span {
@@ -66,7 +76,7 @@ export function initElement() {
   align-items: center;
 }
 #JSON-UI-HEADER {
-  background: rgb(47, 49, 54);
+  background: var(--JSON-bg-color);
   height: 36px;
   width: 100vw;
   position: fixed;
@@ -75,7 +85,7 @@ export function initElement() {
   z-index: 999999;
   display: flex;
   align-items: center;
-  padding-left: 1rem;
+  padding: 1rem;
 }
 #reload-btn {
   margin-left: calc(30vw - 120px);
@@ -104,6 +114,20 @@ export function initElement() {
 
 .cm-scroller {
   overflow-y: hidden !important;
+}
+
+#theme-btn svg{
+  width: 1.4rem;
+  height: 1.4rem;
+  cursor: pointer;
+  color: ${getBrowserThem() === 'dark' ? '#8b8d8f' : '#878d97'};
+  transition: color .5s;
+}
+#theme-btn svg:hover{
+  color: ${getBrowserThem() === 'dark' ? '#e5e7eb' : '#374151'};
+}
+a[href="https://editor.herowand.com"] { 
+  background-color: yellow;
 }
 </style>`
   document.body.insertAdjacentHTML('beforeend', initElement)
