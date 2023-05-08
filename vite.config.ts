@@ -72,6 +72,8 @@ export const sharedConfig: UserConfig = {
       'vue',
       '@vueuse/core',
       'webextension-polyfill',
+      'monaco-editor/esm/vs/editor/editor.worker',
+      'monaco-editor/esm/vs/language/json/json.worker',
     ],
     exclude: [
       'vue-demi',
